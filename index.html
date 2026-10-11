@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAVORA — 2-Minute Masala Magic | AI Culinary Experience</title>
+    <meta name="description"
+        content="SAVORA: Master the iconic 2-Minute Masala Noodles with AI Flavor Alchemy, interactive cooking mode, smart simmer timer, and chef tricks." />
+    <meta name="theme-color" content="#FFC72C" />
+
+    <!-- Editorial & Body Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..700&family=Playfair+Display:ital,wght@0,600..900;1,600..900&family=JetBrains+Mono:wght@500;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <a href="#recipeCard" class="skip-link">Skip to recipe content</a>
+
+    <!-- Announcement Bar -->
+    <aside class="announcement-bar" aria-label="Culinary tip">
+        <div class="container announcement-inner">
+            <span class="announcement-tag">2-MINUTE MAGIC</span>
+            <span>Authentic Masala broth meets AI Chef customization. Good food starts
+                with mindful ingredients! ❤️</span>
+        </div>
+    </aside>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="container header-row">
+            <div class="brand-group">
+                <div class="maggi-brand-pill">Maggi</div>
+                <span class="savora-title">SAVORA</span>
+            </div>
+
+            <nav class="nav-links-desktop" aria-label="Main Navigation">
+                <a href="#recipeCard" class="nav-link-item active">Recipe</a>
+                <a href="#aiAlchemist" class="nav-link-item">✨ AI Alchemist</a>
+                <a href="#cookingCompanion" class="nav-link-item">Cook Mode</a>
+                <a href="#timerCard" class="nav-link-item">2-Min Timer</a>
+                <a href="#faqSection" class="nav-link-item">Kitchen Tips</a>
+            </nav>
+
+            <div class="header-actions">
+                <button type="button" class="btn-ai-trigger" id="btnOpenDrawer" aria-label="Open AI Sous-Chef">
+                    <span>✨</span>
+                    <span>Sous-Chef AI</span>
+                </button>
+                <button type="button" class="btn-icon-pill" id="themeToggleBtn"
+                    aria-label="Switch to Midnight Kitchen (Dark Mode)" title="Switch to Dark Mode">
+                    <span id="themeIcon">🌙</span>
+                </button>
+                <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open navigation menu"
+                    aria-expanded="false" aria-controls="mobileNavMenu">
+                    <span class="hamburger-line line-1"></span>
+                    <span class="hamburger-line line-2"></span>
+                    <span class="hamburger-line line-3"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Panel -->
+        <nav class="mobile-nav-panel" id="mobileNavMenu" aria-label="Mobile Navigation" aria-hidden="true">
+            <div class="container mobile-nav-inner">
+                <a href="#recipeCard" class="mobile-nav-item active">
+                    <span class="mobile-nav-icon">🍜</span>
+                    <span>Recipe</span>
+                </a>
+                <a href="#aiAlchemist" class="mobile-nav-item">
+                    <span class="mobile-nav-icon">✨</span>
+                    <span>AI Alchemist</span>
+                </a>
+                <a href="#cookingCompanion" class="mobile-nav-item">
+                    <span class="mobile-nav-icon">👨‍🍳</span>
+                    <span>Cook Mode</span>
+                </a>
+                <a href="#timerCard" class="mobile-nav-item">
+                    <span class="mobile-nav-icon">⏱️</span>
+                    <span>2-Min Timer</span>
+                </a>
+                <a href="#faqSection" class="mobile-nav-item">
+                    <span class="mobile-nav-icon">💡</span>
+                    <span>Kitchen Tips</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div>
+                    <div class="hero-badge-row">
+                        <div class="bubble-good-food">
+                            <span>Good Food, Good Mood!</span>
+                            <span style="color: var(--color-maggi-red)">❤️</span>
+                        </div>
+                        <span class="badge-time-magic">⏱️ 10 MIN TOTAL</span>
+                    </div>
+
+                    <h1 class="hero-headline">
+                        Artisanal <span>Masala Herb</span> Noodles
+                    </h1>
+                    <p class="hero-lead-text">
+                        The beloved golden comfort bowl elevated with fragrant roasted
+                        coriander, sweet heirloom peas, golden butter, and fresh garden
+                        basil. Follow our 6-step stovetop guide or remix your bowl with
+                        Gemini AI.
+                    </p>
+
+                    <div class="hero-actions-row">
+                        <a href="#recipeCard" class="btn-cta-primary">
+                            <span>Start Cooking</span>
+                            <span>➔</span>
+                        </a>
+                        <a href="#aiAlchemist" class="btn-cta-secondary">
+                            <span>✨ Remix with AI</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image-card">
+                    <img src="/assets/images/maggie.jpg"
+                        alt="Steaming bowl of spicy masala noodles garnished with fresh basil" class="hero-food-photo"
+                        onerror="
+                this.src =
+                  'https://placehold.co/800x600/FFC72C/241710?text=Delicious+Masala+Noodles'
+              " />
+                    <div class="corner-badge-2min">2-MIN<br />SIMMER</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="metadata-strip">
+            <div class="container">
+                <div class="metadata-card">
+                    <div class="meta-metrics-group">
+                        <div class="meta-stat">
+                            <span class="stat-label">PREP TIME</span>
+                            <span class="stat-value">5 Mins</span>
+                        </div>
+                        <div class="meta-stat">
+                            <span class="stat-label">COOK TIME</span>
+                            <span class="stat-value">5 Mins</span>
+                        </div>
+                        <div class="meta-stat">
+                            <span class="stat-label">DIFFICULTY</span>
+                            <span class="stat-value" style="color: #2e8b57">Beginner</span>
+                        </div>
+                        <div class="meta-stat">
+                            <span class="stat-label">CALORIES</span>
+                            <span class="stat-value">340 kcal</span>
+                        </div>
+                    </div>
+
+                    <div class="meta-btn-group">
+                        <button type="button" class="meta-action-btn" id="btnPrintRecipe">
+                            🖨️ Print
+                        </button>
+                        <button type="button" class="meta-action-btn" id="btnShareRecipe">
+                            🔗 Share
+                        </button>
+                        <button type="button" class="meta-action-btn" id="btnSaveFavorite">
+                            ❤️ Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recipe-main-section" id="recipeCard">
+            <div class="container">
+                <div class="recipe-card-box">
+                    <div class="recipe-columns-layout">
+                        <!-- Column 1: Ingredients & Servings Scaler -->
+                        <div>
+                            <div class="col-header-row">
+                                <div>
+                                    <h2 class="col-title">Ingredients</h2>
+                                    <p class="col-subtitle">
+                                        Check items as you gather them in your prep area.
+                                    </p>
+                                </div>
+
+                                <div class="servings-stepper-box" aria-label="Adjust servings">
+                                    <span style="font-size: 0.75rem; font-weight: 800">SERVINGS:</span>
+                                    <button type="button" class="btn-step-mini" id="btnDecServing"
+                                        aria-label="Decrease servings">
+                                        &minus;
+                                    </button>
+                                    <span class="serving-number" id="servingDisplay">2</span>
+                                    <button type="button" class="btn-step-mini" id="btnIncServing"
+                                        aria-label="Increase servings">
+                                        &plus;
+                                    </button>
+                                </div>
+                            </div>
+
+                            <ul class="ingredients-checklist" id="ingredientsList">
+                                <!-- Injected via JavaScript for dynamic scaling -->
+                            </ul>
+
+                            <div class="quick-tips-banner">
+                                <div class="tips-title">💡 CHEF'S QUICK TIPS</div>
+                                <div class="tips-list">
+                                    <div>
+                                        ✔ Add chopped bell peppers &amp; sweet corn for extra
+                                        crunch.
+                                    </div>
+                                    <div>
+                                        ✔ Swirl a knob of cold butter right at the end for silky
+                                        glaze.
+                                    </div>
+                                    <div>
+                                        ✔ Keep 2 tbsp broth at the bottom — noodles keep
+                                        absorbing!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column 2: 6 Step-by-Step Instructions -->
+                        <div>
+                            <div class="col-header-row">
+                                <div>
+                                    <h2 class="col-title">Step by Step</h2>
+                                    <p class="col-subtitle">
+                                        The iconic 6-stage stovetop technique.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="steps-stack">
+                                <div class="step-item-card">
+                                    <div class="step-num-badge badge-b1">1</div>
+                                    <div class="step-content-body">
+                                        <div class="step-header-flex">
+                                            <h3 class="step-title-text">BOIL WATER</h3>
+                                            <span class="step-clock-pill">⏱️ 2 Mins</span>
+                                        </div>
+                                        <p class="step-instruction-p">
+                                            Take 2 cups (approx. 300 ml per noodle cake) of fresh
+                                            filtered water in a saucepan and bring it to a rolling
+                                            boil.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="step-item-card">
+                                    <div class="step-num-badge badge-b2">2</div>
+                                    <div class="step-content-body">
+                                        <div class="step-header-flex">
+                                            <h3 class="step-title-text">ADD NOODLES</h3>
+                                            <span class="step-clock-pill">⏱️ 30 Secs</span>
+                                        </div>
+                                        <p class="step-instruction-p">
+                                            Add the noodle cake and break gently in half if you
+                                            prefer manageable strands. Toss in diced veggies.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="step-item-card">
+                                    <div class="step-num-badge badge-b3">3</div>
+                                    <div class="step-content-body">
+                                        <div class="step-header-flex">
+                                            <h3 class="step-title-text">ADD TASTEMAKER</h3>
+                                            <span class="step-clock-pill">⏱️ 30 Secs</span>
+                                        </div>
+                                        <p class="step-instruction-p">
+                                            Tear open the masala tastemaker sachet and sprinkle
+                                            evenly across the water. Stir gently to disperse spices.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="step-item-card">
+                                    <div class="step-num-badge badge-b4">4</div>
+                                    <div class="step-content-body">
+                                        <div class="step-header-flex">
+                                            <h3 class="step-title-text">COOK ON MEDIUM FLAME</h3>
+                                            <span class="step-clock-pill">⏱️ 2 Mins</span>
+                                        </div>
+                                        <p class="step-instruction-p">
+                                            Cook for 2 minutes on medium flame, stirring
+                                            occasionally so the noodles absorb the spiced reduction
+                                            without sticking.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="step-item-card">
+                                    <div class="step-num-badge badge-b5">5</div>
+                                    <div class="step-content-body">
+                                        <div class="step-header-flex">
+                                            <h3 class="step-title-text">CHECK &amp; STIR</h3>
+                                            <span class="step-clock-pill">⏱️ 30 Secs</span>
+                                        </div>
+                                        <p class="step-instruction-p">
+                                            Check noodle tenderness. Add 1 tbsp butter for a silky
+                                            sheen. If you prefer less broth, simmer 30 seconds more.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="step-item-card">
+                                    <div class="step-num-badge badge-b6">6</div>
+                                    <div class="step-content-body">
+                                        <div class="step-header-flex">
+                                            <h3 class="step-title-text">SERVE HOT</h3>
+                                            <span class="step-clock-pill">Instant</span>
+                                        </div>
+                                        <p class="step-instruction-p">
+                                            Pour into deep ceramic bowls. Garnish with torn fresh
+                                            basil and cilantro. Enjoy while piping hot!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="alchemist-section" id="aiAlchemist">
+            <div class="container">
+                <div class="alchemist-card">
+                    <span class="ai-spark-tag">✨ POWERED BY GEMINI 2.5 FLASH</span>
+                    <h2 class="alchemist-title">AI Maggi Flavor Alchemist</h2>
+                    <p class="alchemist-desc">
+                        Got cheese, eggs, kimchi, or chili crisp in your fridge? Tell Chef
+                        Gemini what ingredients you have, and get a quick, customized
+                        10-minute recipe instantly.
+                    </p>
+
+                    <div class="alchemist-input-wrap">
+                        <input type="text" id="alchemistInput" class="alchemist-text-input"
+                            placeholder="Enter your ingredients (e.g. cheddar cheese, sweet corn, garlic butter, chili oil)..."
+                            aria-label="Pantry ingredients for AI recipe remix" />
+                        <button type="button" class="btn-alchemist-submit" id="btnAlchemistSubmit">
+                            ✨ Remix My Maggi
+                        </button>
+                    </div>
+
+                    <div class="vibe-chips-row">
+                        <span style="
+                  font-size: 0.78rem;
+                  font-weight: 800;
+                  color: var(--color-text-muted);
+                ">POPULAR VIBES:</span>
+                        <button type="button" class="vibe-chip" data-vibe="Street Style Cheese & Sweet Corn">
+                            🧀 Cheese & Sweet Corn
+                        </button>
+                        <button type="button" class="vibe-chip" data-vibe="Crispy Garlic Chili Oil Fusion">
+                            🌶️ Chili Oil Garlic Crunch
+                        </button>
+                        <button type="button" class="vibe-chip" data-vibe="Spicy Egg Bhurji Noodle Scramble">
+                            🍳 Egg Bhurji Scramble
+                        </button>
+                        <button type="button" class="vibe-chip" data-vibe="Protein Paneer & Herb Butter">
+                            🧈 Protein Paneer Herb
+                        </button>
+                    </div>
+
+                    <div class="ai-loading-box" id="alchemistLoading">
+                        <div class="spin-loader"></div>
+                        <span>Chef Gemini is simmering your custom recipe...</span>
+                    </div>
+
+                    <div class="ai-result-panel" id="alchemistResultPanel">
+                        <!-- Structured, highly readable recipe card dynamically injected here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="companion-section" id="cookingCompanion">
+            <div class="container companion-grid">
+                <!-- Active Cooking Mode -->
+                <div class="companion-card">
+                    <span class="ai-spark-tag" style="
+                background: var(--color-maggi-red-soft);
+                color: var(--color-maggi-red);
+              ">STEP-BY-STEP CONCIERGE</span>
+                    <h2 style="
+                font-family: var(--font-display);
+                font-size: 1.6rem;
+                font-weight: 800;
+                margin-top: 0.3rem;
+              ">
+                        Active Cooking Mode
+                    </h2>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted)">
+                        Follow along hands-free with high-contrast text and voice
+                        assistance.
+                    </p>
+
+                    <div class="active-step-panel">
+                        <span class="step-counter-tag" id="activeStepTag">STEP 1 OF 6</span>
+                        <h3 class="step-active-heading" id="activeStepHeading">
+                            Boil Water
+                        </h3>
+                        <p class="step-active-desc" id="activeStepDesc">
+                            Take 2 cups (approx. 300 ml per noodle cake) of fresh filtered
+                            water in a saucepan and bring it to a rolling boil over
+                            medium-high heat.
+                        </p>
+                    </div>
+
+                    <div class="step-track-bar">
+                        <div class="step-track-fill" id="stepTrackFill" style="width: 16.66%"></div>
+                    </div>
+
+                    <div class="companion-controls-row">
+                        <button type="button" class="btn-step-action" id="btnPrevStep" disabled>
+                            &larr; Previous
+                        </button>
+                        <button type="button" class="btn-step-action" id="btnVoiceRead">
+                            🔊 Read Step
+                        </button>
+                        <button type="button" class="btn-step-action primary" id="btnNextStep">
+                            Next Step &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Precision 2-Minute Simmer Stopwatch -->
+                <div class="companion-card" id="timerCard">
+                    <span class="ai-spark-tag" style="
+                background: var(--color-maggi-yellow-light);
+                color: var(--color-accent-gold);
+              ">PRECISION KITCHEN CLOCK</span>
+                    <h2 style="
+                font-family: var(--font-display);
+                font-size: 1.6rem;
+                font-weight: 800;
+                margin-top: 0.3rem;
+              ">
+                        2-Minute Stopwatch
+                    </h2>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted)">
+                        Calibrated for optimal noodle elasticity without getting soggy.
+                    </p>
+
+                    <div class="timer-display-box">
+                        <div class="timer-digits-text" id="timerDigits">02:00</div>
+                        <div class="timer-status-sub" id="timerStatus">
+                            Ready to simmer
+                        </div>
+                    </div>
+
+                    <div class="timer-btn-row">
+                        <button type="button" class="btn-timer-main" id="btnTimerStart">
+                            Start Timer
+                        </button>
+                        <button type="button" class="btn-timer-reset" id="btnTimerReset">
+                            Reset
+                        </button>
+                    </div>
+
+                    <div style="display: flex; gap: 0.4rem; justify-content: center">
+                        <button type="button" class="vibe-chip" data-time="120">
+                            2 Mins (Classic)
+                        </button>
+                        <button type="button" class="vibe-chip" data-time="30">
+                            30s (Stir Check)
+                        </button>
+                        <button type="button" class="vibe-chip" data-time="300">
+                            5 Mins (Total Prep)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="nutrition-section">
+            <div class="container">
+                <div class="nutrition-box">
+                    <div>
+                        <span class="ai-spark-tag" style="background: var(--color-surface-muted)">NUTRITION
+                            TRANSPARENCY</span>
+                        <h2 style="
+                  font-family: var(--font-display);
+                  font-size: 1.8rem;
+                  font-weight: 800;
+                  margin: 0.4rem 0;
+                ">
+                            Nutritional Breakdown
+                        </h2>
+                        <p style="font-size: 0.9rem; color: var(--color-text-muted)">
+                            Calculated per single prepared serving bowl.
+                        </p>
+                    </div>
+
+                    <div class="nutri-metrics-flex">
+                        <div class="nutri-stat-card">
+                            <div class="nutri-num">340</div>
+                            <div class="nutri-unit">kcal</div>
+                            <div class="nutri-label">CALORIES</div>
+                        </div>
+                        <div class="nutri-stat-card">
+                            <div class="nutri-num">7.2</div>
+                            <div class="nutri-unit">grams</div>
+                            <div class="nutri-label">PROTEIN</div>
+                        </div>
+                        <div class="nutri-stat-card">
+                            <div class="nutri-num">48.0</div>
+                            <div class="nutri-unit">grams</div>
+                            <div class="nutri-label">CARBS</div>
+                        </div>
+                        <div class="nutri-stat-card">
+                            <div class="nutri-num">13.5</div>
+                            <div class="nutri-unit">grams</div>
+                            <div class="nutri-label">TOTAL FAT</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion -->
+        <section class="faq-section" id="faqSection">
+            <div class="container">
+                <div style="text-align: center">
+                    <h2 style="
+                font-family: var(--font-display);
+                font-size: 2rem;
+                font-weight: 800;
+              ">
+                        Frequently Asked Questions
+                    </h2>
+                    <p style="font-size: 0.92rem; color: var(--color-text-muted)">
+                        Quick kitchen troubleshooting for the ultimate noodle bowl.
+                    </p>
+                </div>
+
+                <div class="faq-stack">
+                    <div class="faq-item-card">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>Why is 300 ml water the exact sweet spot?</span>
+                            <span class="faq-icon-cross">+</span>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <div class="faq-answer-inner">
+                                <div class="faq-answer-content">
+                                    <p>
+                                        Adding exactly 300 ml per cake allows wheat starches to
+                                        emulsify with the tastemaker spices into a glossy, velvety
+                                        reduction without leaving the bowl soupy or dry.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item-card">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>How do I prevent the noodles from becoming mushy?</span>
+                            <span class="faq-icon-cross">+</span>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <div class="faq-answer-inner">
+                                <div class="faq-answer-content">
+                                    <p>
+                                        Keep the heat on medium-high and turn off the flame right
+                                        when 2 tablespoons of liquid remain. The noodles keep
+                                        cooking from residual heat while you plate them.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item-card">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>How does the Servings Scaler calculate measurements?</span>
+                            <span class="faq-icon-cross">+</span>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <div class="faq-answer-inner">
+                                <div class="faq-answer-content">
+                                    <p>
+                                        The interactive stepper recalculates water ratios, spice
+                                        sachets, and noodle cakes in real time with
+                                        non-destructive state mathematics, scaling cleanly from 1
+                                        to 12 servings.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item-card">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>Can I make this recipe completely vegan or dairy-free?</span>
+                            <span class="faq-icon-cross">+</span>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <div class="faq-answer-inner">
+                                <div class="faq-answer-content">
+                                    <p>
+                                        Yes! Simply replace the salted butter with cold-pressed
+                                        coconut oil, toasted sesame oil, or extra virgin olive oil.
+                                        The noodle cakes and tastemaker spices are plant-based and
+                                        contain no dairy or animal extracts.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item-card">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>What are the best vegetables and protein toppings to add?</span>
+                            <span class="faq-icon-cross">+</span>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <div class="faq-answer-inner">
+                                <div class="faq-answer-content">
+                                    <p>
+                                        Diced bell peppers, sweet golden corn, baby spinach, button
+                                        mushrooms, and pan-seared paneer or tofu work wonderfully.
+                                        Sauté crunchy vegetables for 45 seconds in light butter before
+                                        adding the noodles to preserve color and crisp bite.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item-card">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>How do I get that rich, creamy street-style café texture?</span>
+                            <span class="faq-icon-cross">+</span>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <div class="faq-answer-inner">
+                                <div class="faq-answer-content">
+                                    <p>
+                                        Stir in a single slice of processed cheddar cheese or 1
+                                        tablespoon of fresh cream during the final 30 seconds of simmering.
+                                        The heat seamlessly melts the cheese into the spice broth, creating
+                                        a decadent, glossy sauce.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item-card">
+                        <button type="button" class="faq-question-btn" aria-expanded="false">
+                            <span>Can I prepare this in an electric kettle or microwave in a hostel?</span>
+                            <span class="faq-icon-cross">+</span>
+                        </button>
+                        <div class="faq-answer-panel">
+                            <div class="faq-answer-inner">
+                                <div class="faq-answer-content">
+                                    <p>
+                                        Yes! In a microwave, use a deep bowl with 280 ml water and
+                                        tastemaker, microwaving on HIGH for 2.5 minutes, then letting
+                                        it rest 1 minute. In an electric kettle, boil water with lid ajar,
+                                        add noodles and spices, and gently separate strands with a silicone fork.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="sous-drawer-overlay" id="sousDrawerOverlay" role="dialog" aria-modal="true"
+        aria-labelledby="drawerTitle" data-lenis-prevent>
+        <div class="sous-drawer-box" data-lenis-prevent>
+            <div class="drawer-header">
+                <div class="drawer-title" id="drawerTitle">
+                    <span>✨</span>
+                    <span>Chef Gemini Sous-Chef</span>
+                </div>
+                <button type="button" class="drawer-close-btn" id="btnCloseDrawer" aria-label="Close assistant">
+                    &times;
+                </button>
+            </div>
+
+            <div class="chat-messages-log" id="sousChatLog">
+                <div class="chat-bubble ai">
+                    <strong>Namaste Chef! 👨‍🍳</strong>
+                    <p style="margin-top: 0.35rem">
+                        Ask me anything about cooking noodles, fixing watery broth, flavor
+                        pairings, or secret street-style hacks.
+                    </p>
+                </div>
+            </div>
+
+            <div class="drawer-quick-chips">
+                <button type="button" class="sous-chip" data-q="How do I fix watery noodles?">
+                    💧 Too watery?
+                </button>
+                <button type="button" class="sous-chip" data-q="Give me a street style spicy hack">
+                    🌶️ Extra spicy
+                </button>
+                <button type="button" class="sous-chip" data-q="How to make cheese melt silky">
+                    🧀 Silky cheese
+                </button>
+                <button type="button" class="sous-chip" data-q="How to cook in microwave?">
+                    ⚡ Microwave
+                </button>
+            </div>
+
+            <form class="drawer-input-form" id="sousChatForm">
+                <input type="text" id="sousChatInput" class="drawer-text-input"
+                    placeholder="Ask your cooking question..." required />
+                <button type="submit" class="btn-drawer-send">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-pill" id="toastPill" role="status" aria-live="polite">
+        Toast Message
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top-grid">
+                <!-- Col 1: Brand & Tagline -->
+                <div class="footer-brand-col">
+                    <div class="brand-group" style="margin-bottom: 0.85rem;">
+                        <div class="maggi-brand-pill">Maggi</div>
+                        <span class="savora-title">SAVORA</span>
+                    </div>
+                    <p class="footer-tagline">
+                        Artisanal 2-minute Masala noodles elevated with fresh garden herbs, heirloom veggies,
+                        and smart AI flavor alchemy. Good food starts with mindful cooking! ❤️
+                    </p>
+                    <div class="footer-badge-pills">
+                        <span class="footer-pill">⏱️ 10-Min Total</span>
+                        <span class="footer-pill">🌶️ Authentic Masala</span>
+                        <span class="footer-pill">✨ AI Sous-Chef</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div class="footer-links-col">
+                    <h3 class="footer-col-title">Navigation</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="#recipeCard" class="footer-link">🍜 Recipe &amp; Scaler</a></li>
+                        <li><a href="#aiAlchemist" class="footer-link">✨ AI Flavor Alchemist</a></li>
+                        <li><a href="#cookingCompanion" class="footer-link">👨‍🍳 Cook Mode</a></li>
+                        <li><a href="#timerCard" class="footer-link">⏱️ 2-Min Simmer Timer</a></li>
+                        <li><a href="#faqSection" class="footer-link">💡 Kitchen Tips &amp; FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Chef Hacks -->
+                <div class="footer-links-col">
+                    <h3 class="footer-col-title">Chef Secrets</h3>
+                    <ul class="footer-links-list">
+                        <li><a href="#faqSection" class="footer-link">🧈 Cold Butter Glaze</a></li>
+                        <li><a href="#faqSection" class="footer-link">🧀 Street Cheese Melt</a></li>
+                        <li><a href="#faqSection" class="footer-link">🌶️ Spicy Tadka Hack</a></li>
+                        <li><a href="#faqSection" class="footer-link">💧 The 300 ml Water Rule</a></li>
+                        <li><a href="#faqSection" class="footer-link">⚡ Hostel Microwave Tech</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: AI Sous-Chef Card -->
+                <div class="footer-card-col">
+                    <div class="footer-cta-card">
+                        <div class="footer-cta-header">
+                            <span class="footer-cta-spark">✨</span>
+                            <strong>Need Kitchen Help?</strong>
+                        </div>
+                        <p class="footer-cta-desc">
+                            Stuck with watery broth or need quick pairing ideas? Chef Gemini is ready.
+                        </p>
+                        <button type="button" class="footer-cta-btn" id="btnFooterSousChef">
+                            <span>Open Sous-Chef AI</span>
+                            <span>➔</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <p class="footer-copyright">
+                    &copy; SAVORA &times; Maggi Product Experience. Good Food, Good Mood! ❤️
+                </p>
+                <button type="button" id="btnBackToTop" class="footer-back-to-top" aria-label="Scroll back to top">
+                    <span>Back to Top</span>
+                    <span class="back-to-top-arrow">&uarr;</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
